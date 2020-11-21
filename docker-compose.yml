@@ -12,7 +12,7 @@ services:
 
   app:
     container_name: app-desafio
-    image: rrooliveira/api-v2
+    image: rrooliveira/backendchallenge
     restart: always
     ports:
       - "8083:8083"
