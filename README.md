@@ -37,19 +37,19 @@ Para executar a aplicação é necessário realizar os procedimentos abaixo:
 - Renomear o arquivo `.env.example` para `.env`
 - Executar o comando para criar os cotainers Docker `docker-compose up -d`
 - Executar o comando para baixar as dependências `composer install`
-    * Ou via Docker, `docker-compose exec app-desafio composer install`
+    * Ou via Docker, `docker-compose exec app composer install`
 - Executar o comando para gerar a nova chave do Laravel `php artisan key:generate`
-    * Ou via Docker, `docker-compose exec app-desafio php artisan key:generate`
+    * Ou via Docker, `docker-compose exec app php artisan key:generate`
 - Executar o comando para criar as tabelas do banco de dados `php artisan migrate`
-    * Ou via Docker, `docker-compose exec app-desafio php artisan migrate`
+    * Ou via Docker, `docker-compose exec app php artisan migrate`
 - Executar o comando para popular o banco de dados `php artisan db:seed`
-    * Ou via Docker, `docker-compose exec app-desafio php artisan db:seed`
+    * Ou via Docker, `docker-compose exec app php artisan db:seed`
 - Excutar o comando para ativar a fila de processamento `php artisan queue:listen redis`
-    * Ou via Docker, `docker-compose exec app-desafio php artisan queue:listen redis`
+    * Ou via Docker, `docker-compose exec app php artisan queue:listen redis`
 
 ## Endpoints
 
-- Lista todos os usuários da aplicação
+- Lista todos os usuários da aplicação. A senha de todos os usuários cadastrados é `password`
     * http://localhost:8083/api/users
     
 - Autenticação dos usuários
@@ -73,13 +73,15 @@ Para executar a aplicação é necessário realizar os procedimentos abaixo:
 ## Fila de Processamento
 
 - Para ativar a fila de processamento digite o comando na raiz do projeto `php artisan queue:listen redis`
-    * Ou via Docker, `docker-compose exec app-desafio php artisan queue:listen redis`
+    * Ou via Docker, `docker-compose exec app php artisan queue:listen redis`
 
 ## Testes
 
 Para realizar os testes unitários execute o comando `composer tests-unit`
+    * Ou via Docker, `docker-compose exec app composer tests-unit`
 
 Para realizar os testes de feature execute o comando `composer tests-feature`
+    * Ou via Docker, `docker-compose exec app composer tests-feature`
     
 ## Desenvolvedor
 
